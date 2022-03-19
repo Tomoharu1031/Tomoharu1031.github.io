@@ -1,0 +1,496 @@
+/* スマホ用： 599px以下 */
+@media screen and (max-width:599px) {
+    .wrapper{
+        /* max-width: 1170px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px; */
+    
+        display: grid;
+        grid-template-columns: 
+            [start] auto [main-columns] 9fr [nav] auto [end];
+        grid-template-rows: 
+            [header] auto [main-rows] auto [footer] auto [bottom];
+    }
+
+    .wrapper nav{
+        /* wrapperって書かないと優先されないよ！ */
+        /* https://fujikoblog0309.com/responsive-css */
+        grid-column-start: start;
+        grid-column-end: end;
+        grid-row-start: footer;
+        grid-row-end: bottom;
+    }
+
+    .wrapper main{
+        /* wrapperって書かないと優先されないよ！ */
+        /* https://fujikoblog0309.com/responsive-css */
+        grid-column-start: main-columns;
+        grid-column-end: end;
+        grid-row-start: main-rows;
+        grid-row-end: footer;
+    }
+
+    header .header-flex{
+        /* headerって書かないと優先されないよ！ */
+        /* https://fujikoblog0309.com/responsive-css */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    header .menu-wrapper{
+        /* margin-left: auto; */
+    }
+    header .menu-wrapper .menu {
+        /* headerって書かないと優先されないよ！ */
+        /* https://fujikoblog0309.com/responsive-css */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        /* align-content:stretch; */
+
+        width: 100%;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    header .menu-wrapper .menu li{
+        margin-top: 5px;
+    }
+
+    main .like{
+        padding-left: 0;
+    }
+}
+
+/* タブレット用： 1024px以下 */
+@media screen and (max-width:1024px) {
+    .wrapper{
+        /* max-width: 1170px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px; */
+    
+        display: grid;
+        grid-template-columns: 
+            [start] auto [main-columns] 9fr [nav] 0 [end];
+        grid-template-rows: 
+            [header] auto [main-rows] auto [footer] auto [bottom];
+    }
+
+    .wrapper nav{
+        /* wrapperって書かないと優先されないよ！ */
+        /* https://fujikoblog0309.com/responsive-css */
+        grid-column-start: start;
+        grid-column-end: end;
+        grid-row-start: footer;
+        grid-row-end: bottom;
+    }
+    
+    .wrapper main{
+        /* wrapperって書かないと優先されないよ！ */
+        /* https://fujikoblog0309.com/responsive-css */
+        grid-column-start: main-columns;
+        grid-column-end: end;
+        grid-row-start: main-rows;
+        grid-row-end: footer;
+    }
+
+
+
+    header .header-flex{
+        /* headerって書かないと優先されないよ！ */
+        /* https://fujikoblog0309.com/responsive-css */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    header .menu-wrapper{
+        margin-right: auto;
+    }
+    header .menu-wrapper .menu {
+        /* headerって書かないと優先されないよ！ */
+        /* https://fujikoblog0309.com/responsive-css */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+        width: 100%;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+/* 全体 */
+*{
+    box-sizing: border-box;
+}
+
+/* ボディ */
+body{
+    /* display: grid;
+    grid-template-columns: 
+        [start] 2fr [main-columns] 7fr [nav] 3fr [end];
+    grid-template-rows: 
+        [header] auto [main-rows] auto [footer] auto [bottom]; */
+    
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+/* ラッパー */
+.wrapper{
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    display: grid;
+    grid-template-columns: 
+        [start] 0 [main-columns] 9fr [nav] 3fr [end];
+    grid-template-rows: 
+        [header] auto [main-rows] auto [footer] auto [bottom];
+}
+
+
+/* ヘッダー */
+header{
+    /* grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: header;
+    grid-row-end: main-rows; */
+
+}
+.header-wrapper{
+    /* max-width: 1170px; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.header-flex{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.header-flex:first-child{
+    margin-right: auto;
+}
+
+/* ヘッド */
+#head{
+    padding: 8px 15px;
+    margin: .7em .3em;
+    font-size: 1.5em;
+    margin-right: auto;
+
+
+}
+#head a{
+    text-decoration: none;
+    color: #888;
+}
+
+/* メニュー */
+.menu-wrapper{
+    /* padding-left: 0; */
+    /* margin-left: 0; */
+
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin: 0 2em 0 0;
+    list-style: none;
+}
+.menu li{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    height: 40px;
+    margin: 0 12px;
+    transition: all .5s;
+}
+.menu a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 80px;
+    height: 100%;
+    padding: 0 10px;
+    transition: all .3s;
+    text-decoration: none;
+    color: #888;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+
+}
+.menu a:hover{
+    background-color: white;
+    color: black;
+}
+
+/* パンくずリスト */
+.breadlist{
+    display: flex;
+    list-style: none;
+    padding: 5px 0 0 0;
+    margin: 0 25px;
+    font-size: 16px;
+}
+.breadlist li{
+    padding: 0;
+    color: #888;
+}
+.breadlist li::after{
+    content: '>';
+    margin: 0 5px;
+}
+.breadlist li:last-child::after{
+    display: none;
+}
+.breadlist a{
+    text-decoration: none;
+    color: #888;
+}
+
+
+
+
+
+/* サイド */
+nav{
+    grid-column-start: nav;
+    grid-column-end: end;
+    grid-row-start: main-rows;
+    grid-row-end: footer;
+}
+.nav-wrapper{
+    padding: 5px;
+    margin: 10px;
+
+}
+/* SNSとか */
+.aboutme{
+    padding: 0;
+    margin: 0 0px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+.aboutme li{
+    list-style: none;
+}
+.aboutme .icon{
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+
+    padding: 0;
+    margin: 0 15px;
+    font-size: 2.5em;
+
+    transition: all .5s;
+}
+.aboutme .twitter{
+    color: skyblue;
+}
+.aboutme .twitter:hover{
+    color: #00acee;
+}
+.aboutme .github{
+    color: #888;
+}
+.aboutme .github:hover{
+    color: #000;
+}
+/* ニュースナーブバー */
+.news-nav{
+    padding: 10px 0;
+    margin: 10px 0;
+}
+/* ニュースヘッド */
+.news-head{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 0;
+
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+/* ニュースナーブリスト */
+.news-nav-list{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+
+}
+.news-column{
+    padding: 0 1em;
+    margin: .5em 0;
+    /* margin: 1em 0; */
+    background-color: ghostwhite;
+    text-decoration: none;
+    border-left: solid 6px #5bb7ae;
+    transition: all .5s;
+}
+.news-column:hover{
+    background-color: white;
+}
+.news-column a{
+    text-decoration: none;
+    color: #888;
+    transition: all .3s;
+}
+.news-column a:hover{
+    color: black;
+}
+.news-column p{
+
+}
+
+
+
+
+/* メイン */
+main{
+    grid-column-start: main-columns;
+    grid-column-end: nav;
+    grid-row-start: main-rows;
+    grid-row-end: footer;
+}
+.main-wrapper{
+    padding: 10px 40px;
+    margin: 10px 15px;
+    background-color: white;
+    
+    border: 2px solid #ccc;
+    border-radius: 10px;
+
+
+}
+main .title{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 15px 5px 25px 0;
+    margin: 1em 0 1.5em 0;
+    
+    font-size: 1.3em;
+    border-bottom: 2px solid #CCC;
+}
+main .title .icon{
+    margin: 0 10px 0 0;
+}
+main .article{
+    padding-bottom: 10px;
+    margin: 5px 0;
+
+    border-bottom: 2px solid #ccc;
+}
+main p{
+    line-height: 2em;
+}
+/* ニュース */
+.news-list{
+    width: 90%;
+    padding: 15px 0 5px 0;
+    margin: 10px auto 0 auto; 
+    list-style: none;
+}
+.news-list .news-item a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #CCC;
+    padding: 20px 20px;
+}
+.news-list .news-item:first-child a{
+    border-top: 1px solid #CCC;
+}
+.news-list .news-item .date{
+    padding: 0 20px 0 0;
+    margin: 0;
+    min-width: 120px;
+    font-size: 16px;
+    color: #999;
+}
+.news-list .news-item .detail{
+    width: 100%;
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+    transition: all .5s;
+}
+.news-list .news-item a:hover .detail{
+    color: crimson;
+}
+/* ライク */
+.like-wrapper{
+    width: 90%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+    /* background-color: pink; */
+}
+.like-head{
+    font-size: 1.2em;
+}
+.like-head .icon{
+    margin: 0 10px 0 0;
+    color: palevioletred;
+}
+.like{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.like li{
+    margin-left: 20px;
+    margin-right: auto;
+    margin-bottom: 5px;
+    color: black;
+}
+.like li:last-child{
+    margin-bottom: 0;
+}
+
+
+
+/* フッター */
+footer{
+    /* grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: footer;
+    grid-row-end: bottom; */
+}
+.footer-container{
+    margin: 10px 0 5px 20px;
+}
