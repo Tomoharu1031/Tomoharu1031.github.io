@@ -1,17 +1,23 @@
 /* スマホ用： 599px以下 */
 @media screen and (max-width:599px) {
-    .wrapper{
+    body .wrapper{
         /* max-width: 1170px;
         margin-left: auto;
         margin-right: auto;
         padding-left: 16px;
         padding-right: 16px; */
+        padding-left: 0;
+        padding-right: 0;
     
-        display: grid;
+        /* display: grid;
         grid-template-columns: 
             [start] auto [main-columns] 9fr [nav] auto [end];
         grid-template-rows: 
-            [header] auto [main-rows] auto [footer] auto [bottom];
+            [header] auto [main-rows] auto [footer] auto [bottom]; */
+    }
+    .wrapper .main-wrapper{
+        margin: 0;
+        padding: 0 15px;
     }
 
     .wrapper nav{
@@ -75,11 +81,11 @@
         padding-left: 16px;
         padding-right: 16px; */
     
-        display: grid;
+        /* display: grid;
         grid-template-columns: 
             [start] auto [main-columns] 9fr [nav] 0 [end];
         grid-template-rows: 
-            [header] auto [main-rows] auto [footer] auto [bottom];
+            [header] auto [main-rows] auto [footer] auto [bottom]; */
     }
 
     .wrapper nav{
